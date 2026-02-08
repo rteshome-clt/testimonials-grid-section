@@ -1,0 +1,138 @@
+:root {
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-light-gray: hsl(0, 0%, 81%);
+    --clr-light-gray-blue: hsl(210, 46%, 95%);
+    --clr-violet: hsl(263, 55%, 52%);
+    --clr-light-violet: hsl(264, 58%, 64%);
+    --clr-gray-blue: hsl(217, 19%, 35%);
+    --clr-dark-blue: hsl(219, 29%, 14%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--clr-light-gray-blue);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--clr-gray-blue);
+    line-height: 1.3;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+
+main {
+    margin: 2rem auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-self: center;
+}
+
+.card {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.card header img {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--clr-light-violet);
+    border-radius: 50%;
+}
+
+.card header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+h3 {
+    font-size: 18.72px;
+}
+
+.card header div p:last-child {
+    font-size: 11px;
+    opacity: 0.5;
+}
+
+.card > p {
+    opacity: 0.7;
+}
+
+main .card:nth-child(1) {
+    background-color: var(--clr-violet);
+    color: var(--clr-white);
+    background-image: url("../images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: top 0 right 30px;
+}
+
+main .card:nth-child(2) {
+    background-color: var(--clr-gray-blue);
+    color: var(--clr-white);
+}
+
+main .card:nth-child(3), main .card:nth-child(5) {
+    background-color: var(--clr-white);
+}
+
+main .card:nth-child(4) {
+    background-color: var(--clr-dark-blue);
+    color: var(--clr-white);
+}
+
+@media (min-width: 900px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    main .card:nth-child(1) {
+        grid-column: 1 / 3;
+    }
+
+    main .card:nth-child(4) {
+        grid-column: 2 / 4;
+    }
+
+    main .card:nth-child(5) {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        max-width: 1050px;
+    }
+
+    main .card:nth-child(5) {
+        grid-column: 4;
+        grid-row: 1 / 4;
+    }
+}
+
+footer {
+    background-color: var(--clr-light-gray);
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+    justify-self: stretch;
+}
+
+footer a {
+    color: var(--clr-violet);
+    text-decoration: underline;
+}
+
+
